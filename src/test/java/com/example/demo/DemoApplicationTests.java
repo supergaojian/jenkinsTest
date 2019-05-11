@@ -16,4 +16,10 @@ public class DemoApplicationTests {
     Assert.assertEquals("Junit is working fine",str);
 	}
 
+  @Test
+  public void testGao() {
+    String str= "Junit is working fine";
+    Assert.assertEquals("Junit is working fine",str);
+  }
+
 }
