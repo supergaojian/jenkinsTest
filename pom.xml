@@ -17,11 +17,11 @@
 	<properties>
 		<java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <xmlFileName>test.xml</xmlFileName>
-    <!--suppress UnresolvedMavenProperty -->
+ <!--   <xmlFileName>test.xml</xmlFileName>
+    &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;
     <xml.file>${env.xmlFileName}</xml.file>
-    <!--suppress UnresolvedMavenProperty -->
-    <testType>${env.testType}</testType>
+    &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;
+    <testType>${env.testType}</testType>-->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -61,12 +61,12 @@
           <argLine>-Dfile.encoding=UTF-8</argLine>
           <!-- 解决maven oom问题http://blog.csdn.net/e5945/article/details/7740904 -->
           <argLine>-Xms512m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=128m</argLine>
-          <systemPropertyVariables>
+         <!-- <systemPropertyVariables>
             <propertyName>${testType}}</propertyName>
-          </systemPropertyVariables>
+          </systemPropertyVariables>-->
           <suiteXmlFiles>
             <!--该文件位于工程根目录时，直接填写名字，其它位置要加上路径。-->
-            <suiteXmlFile>${xml.file}</suiteXmlFile>
+            <suiteXmlFile>test.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
 			</plugin>
