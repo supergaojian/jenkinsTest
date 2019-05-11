@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class DemoApplicationTests {
 
 
-  @Parameters({"testType"})
+  /*@Parameters({"testType"})*/
   @Test
   public void contextLoads() {
     String str = "Junit is working fine";

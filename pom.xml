@@ -54,7 +54,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-       <version>3.6.0</version>
+        <version>1.5.8.RELEASE</version>
         <configuration>
           <testFailureIgnore>true</testFailureIgnore>
           <!-- 解决用maven执行test时 日志乱码的问题，详见：http://www.cnblogs.com/discuss/archive/2010/10/27/1862225.html -->

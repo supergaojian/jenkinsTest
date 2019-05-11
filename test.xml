@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestSuit" parallel="classes" thread-count="1">
-  <parameter name="testType" value="${testType}"/>
+  <!--<parameter name="testType" value="${testType}"/>-->
+  <listeners>
+    <!-- listener class-name="common.TestListener" /> <listener class-name="common.RetryListener"/ -->
+  </listeners>
   <test name="test" preserve-order="true">
     <classes>
       <class name="com.example.demo.DemoApplicationTests" />
