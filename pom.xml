@@ -18,6 +18,10 @@
 		<java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <xmlFileName>test.xml</xmlFileName>
+    <!--suppress UnresolvedMavenProperty -->
+    <xml.file>${env.xmlFileName}</xml.file>
+    <!--suppress UnresolvedMavenProperty -->
+    <testType>${env.testType}</testType>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -52,9 +56,17 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
        <version>3.6.0</version>
         <configuration>
+          <testFailureIgnore>true</testFailureIgnore>
+          <!-- 解决用maven执行test时 日志乱码的问题，详见：http://www.cnblogs.com/discuss/archive/2010/10/27/1862225.html -->
+          <argLine>-Dfile.encoding=UTF-8</argLine>
+          <!-- 解决maven oom问题http://blog.csdn.net/e5945/article/details/7740904 -->
+          <argLine>-Xms512m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=128m</argLine>
+          <systemPropertyVariables>
+            <propertyName>${testType}}</propertyName>
+          </systemPropertyVariables>
           <suiteXmlFiles>
             <!--该文件位于工程根目录时，直接填写名字，其它位置要加上路径。-->
-            <suiteXmlFile>test.xml</suiteXmlFile>
+            <suiteXmlFile>${xml.file}</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
 			</plugin>
